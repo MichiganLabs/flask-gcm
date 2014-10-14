@@ -2,29 +2,14 @@
 
 """Flask-GCM wrapper for python-gcm."""
 
-from gcm.gcm import (
+from gcmclient import (
     GCM as _GCM,
-    GCM_URL,
+    GCMAuthenticationError,
+    JSONMessage,
+    PlainTextMessage,
+    Result,
 )
-
-# Import exception classes into the flask_gcm package
-from gcm.gcm import (  # NOQA
-    GCMException,
-    GCMMalformedJsonException,
-    GCMConnectionException,
-    GCMAuthenticationException,
-    GCMTooManyRegIdsException,
-    GCMInvalidTtlException,
-    GCMMissingRegistrationException,
-    GCMMismatchSenderIdException,
-    GCMNotRegisteredException,
-    GCMMessageTooBigException,
-    GCMInvalidRegistrationException,
-    GCMUnavailableException,
-)
-
-# import other functions into flask_gcm package
-from gcm.gcm import group_response, urlencode_utf8  # NOQA
+from gcmclient.gcm import GCM_URL
 
 
 # Version info
@@ -37,19 +22,11 @@ VERSION = __project__ + '-' + __version__
 
 
 # Define what gets imported when using `from flask_gcm import *`
-__all__ = ('GCM',
-           'GCMException',
-           'GCMMalformedJsonException',
-           'GCMConnectionException',
-           'GCMAuthenticationException',
-           'GCMTooManyRegIdsException',
-           'GCMInvalidTtlException',
-           'GCMMissingRegistrationException',
-           'GCMMismatchSenderIdException',
-           'GCMNotRegisteredException',
-           'GCMMessageTooBigException',
-           'GCMInvalidRegistrationException',
-           'GCMUnavailableException',)
+__all__ = ('GCMAuthenticationError',
+           'JSONMessage',
+           'PlainTextMessage',
+           'GCM',
+           'Result')
 
 
 class GCM(_GCM):
@@ -62,19 +39,19 @@ class GCM(_GCM):
         if self.app:
             self.init_app(app)
 
-    def init_app(self, app):
+    def init_app(self, app, **kwargs):
         """Initialize the GCM object with flask app settings."""
         # Configure default GCM settings
         app.config.setdefault('GCM_URL', GCM_URL)
         app.config.setdefault('GCM_KEY', None)
-        app.config.setdefault('GCM_PROXY', None)
-        # The following is a limit hard coded into the python-gcm library:
+
+        # Hard limit in GCM API:
+        # http://developer.android.com/training/cloudsync/gcm.html
         app.config.setdefault('GCM_MAX_DEVICES_PER_REQUEST', 1000)
 
         # Configure GCM from app settings
-        self.url = app.config.get('GCM_URL')
+        self.url = app.config.get('GCM_URL') or GCM_URL
         self.api_key = app.config.get('GCM_KEY')
-        self.proxy = app.config.get('GCM_PROXY')
 
         # Register GCM on app extensions
         if not hasattr(app, 'extensions'):  # pragma: no cover
@@ -84,4 +61,4 @@ class GCM(_GCM):
 
         # init python-gcm object
         super(self.__class__, self).__init__(self.api_key, url=self.url,
-                                             proxy=self.proxy)
+                                             **kwargs)
