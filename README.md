@@ -19,13 +19,13 @@ Python3 is not yet supported, [but will be soon](https://github.com/MichiganLabs
 
 Flask-GCM can be installed with pip:
 
-```shell
+```
 $ pip install flask-gcm
 ```
 
 or directly from the source code:
 
-```shell
+```
 $ git clone https://github.com/MichiganLabs/flask-gcm.git
 $ cd flask-gcm
 $ python setup.py install
@@ -71,26 +71,25 @@ The `gcm` object can then be used as described in the [`python-gcm` docs][python
 
 Create a virtualenv:
 
-```shell
+```
 $ make env
 ```
 
 Run the tests:
 
-```shell
+```
 $ make test
 ```
 
 Build the documentation:
 
-```shell
-
+```
 $ make doc
 ```
 
 Run static analysis:
 
-```shell
+```
 $ make flake8
 $ make pep257
 $ make check  # includes all checks
