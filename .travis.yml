@@ -3,8 +3,6 @@ python:
   - 2.7
   - 3.3
   - 3.4
-env:
-  - TEST_RUNNER=pytest
 install:
   - pip install coveralls
 script: make ci
