@@ -24,7 +24,7 @@ $ pip install flask-gcm
 or directly from the source code:
 
 ```shell
-$ git clone https://github.com/michiganlabs/flask-gcm.git
+$ git clone https://github.com/MichiganLabs/flask-gcm.git
 $ cd flask-gcm
 $ python setup.py install
 ```
@@ -100,10 +100,10 @@ Contributions are always welcome! Please keep the following in mind when creatin
 * Contributed code should pass `flake8` checks
 * Include documentation which passes `pep257` guidelines
 
-[travis-badge]: http://img.shields.io/travis/michiganlabs/flask-gcm/master.svg
-[travis-status]: https://travis-ci.org/michiganlabs/flask-gcm
-[coveralls-badge]: http://img.shields.io/coveralls/michiganlabs/flask-gcm/master.svg
-[coverage-status]: https://coveralls.io/r/michiganlabs/flask-gcm
+[travis-badge]: http://img.shields.io/travis/MichiganLabs/flask-gcm/master.svg
+[travis-status]: https://travis-ci.org/MichiganLabs/flask-gcm
+[coveralls-badge]: http://img.shields.io/coveralls/MichiganLabs/flask-gcm/master.svg
+[coverage-status]: https://coveralls.io/r/MichiganLabs/flask-gcm
 [pypi-version-badge]: http://img.shields.io/pypi/v/flask-gcm.svg
 [pypi-downloads-badge]: http://img.shields.io/pypi/dm/flask-gcm.svg
 [pypi-page]: https://pypi.python.org/pypi/flask-gcm
