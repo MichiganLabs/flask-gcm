@@ -4,7 +4,6 @@
 
 import pytest
 from flask import Flask
-from gcmclient.gcm import GCM_URL
 
 
 @pytest.fixture

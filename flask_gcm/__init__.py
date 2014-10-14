@@ -9,7 +9,7 @@ from gcmclient import (
     PlainTextMessage,
     Result,
 )
-from gcmclient.gcm import GCM_URL
+from gcmclient.gcm import GCM_URL  # NOQA
 
 
 # Version info
