@@ -11,9 +11,7 @@ Flask-GCM is a simple wrapper for the [`gcm-client`][gcm-client] library to be u
 
 ### Requirements
 
-* Python 2.6+
-
-Python3 is not yet supported, [but will be soon](https://github.com/MichiganLabs/flask-gcm/issues/1) (hopefully).
+* Python 2.6+ or Python 3.3+
 
 ### Installation
 
