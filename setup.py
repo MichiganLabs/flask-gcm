@@ -30,9 +30,10 @@ setuptools.setup(
     long_description=(README + '\n' + CHANGES),
     license='MIT',
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 3 - Alpha',
         'Natural Language :: English',
         'Operating System :: OS Independent',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
     ],
