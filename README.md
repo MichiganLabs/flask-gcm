@@ -13,7 +13,7 @@ Flask-GCM is a simple wrapper for the [`python-gcm`][python-gcm] library to be u
 
 * Python 2.6+
 
-Python3 is not yet supported, but will be soon (hopefully).
+Python3 is not yet supported, [but will be soon](https://github.com/MichiganLabs/flask-gcm/issues/1) (hopefully).
 
 ### Installation
 
@@ -54,6 +54,8 @@ def create_app():
     gcm.init_app(app)
     return app
 ```
+
+The `gcm` object can then be used as described in the [`python-gcm` docs][python-gcm-docs]
 
 ## For Contributors
 
@@ -112,3 +114,4 @@ Contributions are always welcome! Please keep the following in mind when creatin
 [app-factories]: http://flask.pocoo.org/docs/0.10/patterns/appfactories/
 [python-gcm]: https://pypi.python.org/pypi/python-gcm
 [flask]: http://flask.pocoo.org/
+[python-gcm-docs]: https://github.com/geeknam/python-gcm#usage
