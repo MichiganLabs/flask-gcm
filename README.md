@@ -5,7 +5,7 @@
 [![PyPI Version][pypi-version-badge]][pypi-page]
 [![PyPI Downloads][pypi-downloads-badge]][pypi-page]
 
-Flask-GCM is a simple wrapper for the [`python-gcm`][python-gcm] library to be used with [Flask][flask] applications.
+Flask-GCM is a simple wrapper for the [`gcm-client`][gcm-client] library to be used with [Flask][flask] applications.
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ def create_app():
     return app
 ```
 
-The `gcm` object can then be used as described in the [`python-gcm` docs][python-gcm-docs]
+The `gcm` object can then be used as described in the [`gcm-client` docs][gcm-client-docs]
 
 ## For Contributors
 
@@ -111,6 +111,6 @@ Contributions are always welcome! Please keep the following in mind when creatin
 [pypi-downloads-badge]: http://img.shields.io/pypi/dm/flask-gcm.svg
 [pypi-page]: https://pypi.python.org/pypi/flask-gcm
 [app-factories]: http://flask.pocoo.org/docs/0.10/patterns/appfactories/
-[python-gcm]: https://pypi.python.org/pypi/python-gcm
+[gcm-client]: https://pypi.python.org/pypi/gcm-client/
 [flask]: http://flask.pocoo.org/
-[python-gcm-docs]: https://github.com/geeknam/python-gcm#usage
+[gcm-client-docs]: http://gcm-client.readthedocs.org/en/latest/index.html
