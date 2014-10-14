@@ -9,7 +9,7 @@ from gcmclient import (
     PlainTextMessage,
     Result,
 )
-from gcmclient.gcm import GCM_URL  # NOQA
+from gcmclient.gcm import GCM_URL
 
 
 # Version info
@@ -33,11 +33,11 @@ class GCM(_GCM):
 
     """Convenience wrapper class for GCM library."""
 
-    def __init__(self, app=None, api_key=None, url=GCM_URL):
+    def __init__(self, app=None, api_key=None, url=GCM_URL, **kwargs):
         """Initialize the GCM object with flask app settings."""
         self.app = app
         if self.app:
-            self.init_app(app)
+            self.init_app(app, **kwargs)
 
     def init_app(self, app, **kwargs):
         """Initialize the GCM object with flask app settings."""
