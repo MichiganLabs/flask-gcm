@@ -1,7 +1,3 @@
-# Python settings
-PYTHON_MAJOR := 2
-PYTHON_MINOR := 7
-
 # Test runner settings
 ifndef TEST_RUNNER
 	# options are: nose, pytest
@@ -9,8 +5,8 @@ ifndef TEST_RUNNER
 endif
 
 # Project settings (automatically detected from files/directories)
-PROJECT := $(patsubst ./%.sublime-project,%, $(shell find . -type f -name '*.sublime-p*'))
-PACKAGE := $(patsubst ./%/__init__.py,%, $(shell find . -maxdepth 2 -name '__init__.py'))
+PROJECT := Flask-GCM
+PACKAGE := flask_gcm
 SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 EGG_INFO := $(subst -,_,$(PROJECT)).egg-info
 
