@@ -97,8 +97,11 @@ $(DEPENDS_DEV): Makefile
 
 # Documentation ##############################################################
 
+docs:
+	mkdir -p docs
+
 .PHONY: doc
-doc: readme apidocs
+doc: docs readme apidocs
 
 .PHONY: readme
 readme: .depends-dev docs/README-github.html docs/README-pypi.html
