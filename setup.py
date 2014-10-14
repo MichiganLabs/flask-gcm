@@ -6,8 +6,6 @@ Setup script for Flask-GCM.
 
 import setuptools
 
-from flask_gcm import __project__, __version__
-
 import os
 if os.path.exists('README.rst'):
     README = open('README.rst').read()
@@ -17,8 +15,8 @@ CHANGES = open('CHANGES.md').read()
 
 
 setuptools.setup(
-    name=__project__,
-    version=__version__,
+    name='Flask-GCM',
+    version='0.0.0',
 
     description="Flask-GCM is a simple wrapper for the python-gcm library to be used with Flask applications.",
     url='https://github.com/michiganlabs/flask-gcm',
