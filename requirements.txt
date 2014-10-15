@@ -1,2 +1,2 @@
-python-gcm==0.1.5
+gcm-client==0.1.4
 Flask
