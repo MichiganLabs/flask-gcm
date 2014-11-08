@@ -33,7 +33,7 @@ class GCM(_GCM):
 
     """Convenience wrapper class for GCM library."""
 
-    def __init__(self, app=None, api_key=None, url=GCM_URL, **kwargs):
+    def __init__(self, app=None, **kwargs):
         """Initialize the GCM object with flask app settings."""
         self.app = app
         if self.app:

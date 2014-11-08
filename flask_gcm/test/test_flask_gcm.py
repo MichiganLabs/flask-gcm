@@ -2,6 +2,7 @@
 
 """Tests for Flask-GCM package"""
 
+from flask import Flask
 from flask.ext.gcm import GCM, GCM_URL
 
 
@@ -41,3 +42,12 @@ class TestFlaskGCM:
 
         assert gcm.api_key == app.config['GCM_KEY']
         assert gcm.url == app.config['GCM_URL']
+
+    def test_gcm_registers_on_extensions(self, app):
+        gcm = GCM(app)
+        assert app.extensions['gcm'] == gcm
+
+    def test_gcm_registers_on_extensions_with_init_app(self, app):
+        gcm = GCM()
+        gcm.init_app(app)
+        assert app.extensions['gcm'] == gcm
