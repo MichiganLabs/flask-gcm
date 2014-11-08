@@ -15,7 +15,7 @@ from gcmclient.gcm import GCM_URL
 # Version info
 __project__ = 'Flask-GCM'
 __MAJOR__ = 0
-__MINOR__ = 1
+__MINOR__ = 2
 __PATCH__ = 0
 __version__ = '{0}.{1}.{2}'.format(__MAJOR__, __MINOR__, __PATCH__)
 VERSION = __project__ + '-' + __version__
