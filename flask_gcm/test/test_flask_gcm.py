@@ -2,7 +2,6 @@
 
 """Tests for Flask-GCM package"""
 
-from flask import Flask
 from flask.ext.gcm import GCM, GCM_URL
 
 

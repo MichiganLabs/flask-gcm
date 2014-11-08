@@ -1,7 +1,7 @@
-# Test runner settings
-ifndef TEST_RUNNER
-	# options are: nose, pytest
-	TEST_RUNNER := pytest
+# Python settings
+ifndef TRAVIS
+	PYTHON_MAJOR := 3
+	PYTHON_MINOR := 4
 endif
 
 # Project settings (automatically detected from files/directories)
@@ -20,6 +20,9 @@ ifneq ($(findstring win32, $(PLATFORM)), )
 	export TCL_LIBRARY=$(SYS_PYTHON_DIR)\\tcl\\tcl8.5
 else
 	SYS_PYTHON := python$(PYTHON_MAJOR)
+	ifdef PYTHON_MINOR
+		SYS_PYTHON := $(SYS_PYTHON).$(PYTHON_MINOR)
+	endif
 	SYS_VIRTUALENV := virtualenv
 endif
 
@@ -86,7 +89,7 @@ depends: .depends-ci .depends-dev
 .PHONY: .depends-ci
 .depends-ci: env Makefile $(DEPENDS_CI)
 $(DEPENDS_CI): Makefile
-	$(PIP) install --upgrade flake8 pep257 $(TEST_RUNNER) coverage
+	$(PIP) install --upgrade flake8 pep257 pytest coverage
 	touch $(DEPENDS_CI)  # flag to indicate dependencies are installed
 
 .PHONY: .depends-dev
@@ -140,22 +143,7 @@ pep257: .depends-ci
 # Testing ####################################################################
 
 .PHONY: test
-test: test-$(TEST_RUNNER)
-
-# nosetest commands
-
-.PHONY: test-nose
-test-nose: .depends-ci
-	$(NOSE) --config=.noserc
-
-.PHONY: tests-nose
-tests-nose: .depends-ci
-	TEST_INTEGRATION=1 $(NOSE) --config=.noserc --cover-package=$(PACKAGE) -xv
-
-# pytest commands
-
-.PHONY: test-py.test
-test-pytest: .depends-ci
+test: .depends-ci
 	$(COVERAGE) run --source $(PACKAGE) -m py.test $(PACKAGE) --doctest-modules
 	$(COVERAGE) report --show-missing --fail-under=100
 
