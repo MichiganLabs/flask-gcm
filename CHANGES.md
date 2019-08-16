@@ -5,3 +5,8 @@ Changelog
 ------------------
 
  - Initial release
+
+0.2.1 (2019/08/16)
+------------------
+
+- Switch to Firebase URL which theoretically supports GCM

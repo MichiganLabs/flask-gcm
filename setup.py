@@ -16,7 +16,7 @@ CHANGES = open('CHANGES.md').read()
 
 setuptools.setup(
     name='Flask-GCM',
-    version='0.2.0',
+    version='0.2.1',
 
     description="Flask-GCM is a simple wrapper for the python-gcm library to be used with Flask applications.",
     url='https://github.com/michiganlabs/flask-gcm',
